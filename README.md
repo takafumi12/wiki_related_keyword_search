@@ -6,10 +6,9 @@ wikiの関連KW探索プログラム
 dokcerがinstallされている環境にてwiki_related_keyword_searchで以下のコマンドを実行
 
 ```
-python main.py -t 探索するkw
+docker build . -t my_python_app
 
-python main.py -t 探索するkw
-
+docker run -dit --name my-python-app  -p 8888:80 -v {wiki_related_keyword_searchの絶対パス}:/usr/src/app my_python_app
 
 ```
 
@@ -41,6 +40,6 @@ ex)物流で探索した場合
 
 ## 動作確認環境
 
-- Python 3.7
-- numpy 1.20.0
-- pandas 1.1.5
+- Python 3.10.1
+- requests 2.27.1
+- beautifulsoup4 4.10.0
